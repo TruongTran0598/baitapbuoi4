@@ -64,6 +64,7 @@ class ViewController: UIViewController {
         
         let delete = UIContextualAction(style: .normal, title: "Delete"){
             (action, view, completion) in self.dataUser.remove(at: indexPath.row)
+            self.UITableViewListTodo.reloadData()
             print("delete")
         }
         
@@ -94,14 +95,6 @@ class ViewController: UIViewController {
         }
     }
     
-    func editTodo() -> Void {
-        
-    }
-    
-    func deleteTodo() -> Void {
-        
-    }
-    
     @IBAction func addNewTodo(_ sender: Any) {
         let titleTodo: String = UITextFieldTitleTodo.text ?? ""
         let dateTodo: String = UITextFieldDateCreateTodo.text ?? ""
@@ -119,6 +112,7 @@ class ViewController: UIViewController {
             UITextFieldTitleTodo.text = ""
             UITextFieldDateCreateTodo.text = ""
             UITextFieldContentTodo.text = ""
+            UITableViewListTodo.reloadData()
         }
         print("add todo")
     }
