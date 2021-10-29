@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="KGk-i7-Jjw" customClass="ItemTodoTableViewCell" customModule="baitapbuoi4_todoapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of job here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1V-y4-AQj">
+                        <rect key="frame" x="15" y="10" width="169" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="169" id="fVN-Gj-aKt"/>
+                            <constraint firstAttribute="height" constant="28" id="gji-ZQ-0XJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time create here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYT-PV-PkC">
+                        <rect key="frame" x="15" y="43" width="130" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="130" id="uU3-dQ-006"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redStar.svg" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-6g-6SC">
+                        <rect key="frame" x="250" y="10" width="55" height="53"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="HaU-cF-rvK"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="g7d-6g-6SC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4Pg-Bl-VaZ"/>
+                    <constraint firstItem="MYT-PV-PkC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="8do-f3-BEU"/>
+                    <constraint firstAttribute="bottom" secondItem="g7d-6g-6SC" secondAttribute="bottom" constant="10" id="DIK-O3-7g3"/>
+                    <constraint firstItem="MYT-PV-PkC" firstAttribute="top" secondItem="p1V-y4-AQj" secondAttribute="bottom" constant="5" id="ESQ-g1-pHU"/>
+                    <constraint firstItem="p1V-y4-AQj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Rgt-ku-NiW"/>
+                    <constraint firstAttribute="bottom" secondItem="MYT-PV-PkC" secondAttribute="bottom" constant="10" id="Wak-yr-06v"/>
+                    <constraint firstAttribute="trailing" secondItem="g7d-6g-6SC" secondAttribute="trailing" constant="15" id="aH1-QG-gu0"/>
+                    <constraint firstItem="p1V-y4-AQj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="vdn-e1-8ib"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="UIViewImportanItem" destination="g7d-6g-6SC" id="Ac0-ak-KMQ"/>
+                <outlet property="UIViewNameOfJob" destination="p1V-y4-AQj" id="ft2-na-OQa"/>
+                <outlet property="UIViewTimeCreateTodo" destination="MYT-PV-PkC" id="LLR-ht-ab8"/>
+            </connections>
+            <point key="canvasLocation" x="-307.24637681159425" y="141.62946428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="redStar.svg" width="1076" height="1024"/>
+    </resources>
+</document>
