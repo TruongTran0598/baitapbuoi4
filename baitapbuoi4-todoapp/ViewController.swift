@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var UITextFieldTitleTodo: UITextField!
     @IBOutlet weak var UITextFieldDateCreateTodo: UITextField!
     @IBOutlet weak var UITextFieldContentTodo: UITextField!
+    @IBOutlet weak var UIViewButtonUpdateTodo: UIButton!
     var alertCheckValue: UIAlertController!
+    var idTodo: Int = -1
     
     var dataUser: [Todo] = []
     
@@ -31,6 +33,7 @@ class ViewController: UIViewController {
         
         UIViewButtonCancel.layer.cornerRadius = 10
         UIViewButtonAddTodo.layer.cornerRadius = 10
+        UIViewButtonUpdateTodo.layer.cornerRadius = 10
         
         UITextFieldTitleTodo.placeholder = "Nhap tieu de"
         UITextFieldDateCreateTodo.placeholder = "Nhap thoi gian thuc hien"
@@ -59,7 +62,8 @@ class ViewController: UIViewController {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let edit = UIContextualAction(style: .normal, title: "Edit"){
-            (action, view, completion) in print("edit")
+            (action, view, completion) in self.UpdateDataTodo(idOfTodo: indexPath.row)
+            print("edit")
         }
         
         let delete = UIContextualAction(style: .normal, title: "Delete"){
@@ -93,6 +97,37 @@ class ViewController: UIViewController {
         self.present(alertCheckValue!, animated: true) {
             print("Show")
         }
+    }
+    
+    func UpdateDataTodo(idOfTodo: Int) -> Void {
+        UITextFieldTitleTodo.text =  dataUser[idOfTodo].titleTodo
+        UITextFieldDateCreateTodo.text = dataUser[idOfTodo].timeTodo
+        UITextFieldContentTodo.text = dataUser[idOfTodo].contentTodo
+        
+        idTodo = idOfTodo
+    }
+    
+    @IBAction func updateTodo(_ sender: Any) {
+        let titleTodo: String = UITextFieldTitleTodo.text ?? ""
+        let dateTodo: String = UITextFieldDateCreateTodo.text ?? ""
+        let contentTodo: String = UITextFieldContentTodo.text ?? ""
+        
+        if(titleTodo == ""){
+            showAlert(titleAlert: "Ban khong duoc de trong title")
+        } else if(dateTodo == ""){
+            showAlert(titleAlert: "Ban khong duoc de trong thoi gian")
+        } else if(contentTodo == ""){
+            showAlert(titleAlert: "Ban khong duoc de trong noi dung")
+        } else{
+            let todoData = Todo(titleTodo: titleTodo, timeTodo: dateTodo, contentTodo: contentTodo)
+            dataUser.remove(at: idTodo)
+            dataUser.insert(todoData, at: idTodo)
+            UITextFieldTitleTodo.text = ""
+            UITextFieldDateCreateTodo.text = ""
+            UITextFieldContentTodo.text = ""
+            UITableViewListTodo.reloadData()
+        }
+        print("edit todo")
     }
     
     @IBAction func addNewTodo(_ sender: Any) {

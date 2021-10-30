@@ -63,11 +63,24 @@
                                             <action selector="cancelAddTodo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6FO-6G-A54"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQe-4K-AUg">
+                                        <rect key="frame" x="15" y="235" width="180" height="45"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="Update">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelAddTodo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EkL-fA-cCz"/>
+                                            <action selector="updateTodo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6zu-37-ggi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstItem="OpJ-Uq-hcC" firstAttribute="leading" secondItem="bsb-01-Za9" secondAttribute="leading" constant="15" id="3xx-Oz-n56"/>
                                     <constraint firstAttribute="trailing" secondItem="69n-0G-1cu" secondAttribute="trailing" constant="219" id="4Ov-gX-CoG"/>
+                                    <constraint firstItem="zQe-4K-AUg" firstAttribute="leading" secondItem="bsb-01-Za9" secondAttribute="leading" constant="15" id="BZO-qT-Vr9"/>
+                                    <constraint firstItem="zQe-4K-AUg" firstAttribute="top" secondItem="69n-0G-1cu" secondAttribute="bottom" constant="15" id="F2A-Fx-5NT"/>
                                     <constraint firstItem="VEi-X8-svB" firstAttribute="top" secondItem="PID-Oh-Wbo" secondAttribute="bottom" constant="30" id="FLk-GP-aNU"/>
                                     <constraint firstItem="PID-Oh-Wbo" firstAttribute="top" secondItem="dIO-so-nFK" secondAttribute="bottom" constant="10" id="HIS-my-gK1"/>
                                     <constraint firstItem="69n-0G-1cu" firstAttribute="top" secondItem="PID-Oh-Wbo" secondAttribute="bottom" constant="30" id="IKw-VB-uut"/>
@@ -78,10 +91,12 @@
                                     <constraint firstItem="dIO-so-nFK" firstAttribute="top" secondItem="OpJ-Uq-hcC" secondAttribute="bottom" constant="10" id="R7V-GA-Zd5"/>
                                     <constraint firstAttribute="trailing" secondItem="dIO-so-nFK" secondAttribute="trailing" constant="15" id="Rgb-7q-Mea"/>
                                     <constraint firstAttribute="bottom" secondItem="69n-0G-1cu" secondAttribute="bottom" constant="80" id="Thb-un-Je2"/>
+                                    <constraint firstAttribute="trailing" secondItem="zQe-4K-AUg" secondAttribute="trailing" constant="219" id="YnG-p8-wXt"/>
                                     <constraint firstItem="PID-Oh-Wbo" firstAttribute="leading" secondItem="bsb-01-Za9" secondAttribute="leading" constant="15" id="c7L-yY-YRO"/>
                                     <constraint firstAttribute="trailing" secondItem="VEi-X8-svB" secondAttribute="trailing" constant="15" id="hua-FG-7EN"/>
                                     <constraint firstAttribute="trailing" secondItem="OpJ-Uq-hcC" secondAttribute="trailing" constant="15" id="mjT-2c-cSJ"/>
                                     <constraint firstAttribute="height" constant="300" id="piI-HA-Zrc"/>
+                                    <constraint firstAttribute="bottom" secondItem="zQe-4K-AUg" secondAttribute="bottom" constant="20" id="w6s-ou-2Ln"/>
                                     <constraint firstItem="OpJ-Uq-hcC" firstAttribute="top" secondItem="bsb-01-Za9" secondAttribute="top" constant="20" id="y8H-Lm-XdB"/>
                                     <constraint firstItem="69n-0G-1cu" firstAttribute="leading" secondItem="bsb-01-Za9" secondAttribute="leading" constant="15" id="yvY-km-c1L"/>
                                 </constraints>
@@ -110,6 +125,7 @@
                         <outlet property="UITextFieldTitleTodo" destination="OpJ-Uq-hcC" id="RlV-Dg-L1Z"/>
                         <outlet property="UIViewButtonAddTodo" destination="VEi-X8-svB" id="lWS-SA-LhV"/>
                         <outlet property="UIViewButtonCancel" destination="69n-0G-1cu" id="5eB-aW-95Y"/>
+                        <outlet property="UIViewButtonUpdateTodo" destination="zQe-4K-AUg" id="AKk-er-KmF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -123,6 +139,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
